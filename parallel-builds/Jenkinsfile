@@ -37,7 +37,7 @@ for (stageDef in stageDefs) {
 
         // Start the branch with a node definition. We explicitly exclude the
         // master node, so only the two slaves will do builds:
-        node('!master') {
+        node('master') {
             withEnv(["PATH+MAVEN=${tool 'Maven 3'}/bin"]) {
                 stage(branchName) {
                     try {
